@@ -208,12 +208,6 @@
   .rail nav a.active { color: var(--accent); }
   .rail nav a.active::before { width: 12px; background: var(--accent); }
 
-  .rail .mail {
-    margin-top: 38px;
-    font-family: var(--mono);
-    font-size: 0.75rem;
-  }
-
   /* ── Columna de contenido ───────────────────────────── */
   .content { padding: 72px 0 84px; min-width: 0; }
 
@@ -594,7 +588,6 @@
     .rail { padding: 28px 0 0; }
     .rail-in { position: static; }
     .rail nav { display: flex; flex-wrap: wrap; gap: 3px 16px; }
-    .rail .mail { display: none; }
     .content { padding: 30px 0 64px; }
     .sec { margin-bottom: 50px; }
     .skill-row { grid-template-columns: 1fr; gap: 4px; }
@@ -619,8 +612,6 @@
         <a href="#formacion">Formación</a>
         <a href="#contacto">Contacto</a>
       </nav>
-
-      <p class="mail"><a href="mailto:Jozuk90@gmail.com">Jozuk90@gmail.com</a></p>
     </div>
   </aside>
 
@@ -810,7 +801,7 @@
       <h2>Hablemos</h2>
       <p>Chihuahua, México · Respondo el mismo día.</p>
     </div>
-    <a class="btn" href="mailto:Jozuk90@gmail.com"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6 9-6"/></svg>Escríbeme</a>
+    <a class="btn" id="mail-btn" href="#"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6 9-6"/></svg>Escríbeme</a>
   </div>
 </section>
 
@@ -978,6 +969,12 @@
   window.addEventListener('scroll', spy, { passive: true });
   window.addEventListener('resize', spy);
   spy();
+
+  (function () {
+    var btn = document.getElementById('mail-btn');
+    if (!btn) return;
+    btn.href = 'mailto:' + 'jozuk' + '90' + String.fromCharCode(64) + 'gmail' + '.' + 'com';
+  })();
 </script>
 
 </body>
